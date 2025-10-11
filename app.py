@@ -7,7 +7,6 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-
 @app.route("/pre_dashboard", methods=['POST', 'GET'])
 def pre_dashboard():
     return render_template('pre_dashboard.html')
@@ -24,7 +23,7 @@ def farmers_market():
 
 
 @app.route("/insurance_page", methods=['POST', 'GET'])
-def home():
+def insurance_page():
     return render_template('insurance_page.html')
 
 
