@@ -1,4 +1,5 @@
-Problem Statement
+Problem Statement:
+
 Hunger is not caused only by lack of food but also by poor crop predictions, food waste,
 and inefficient distribution.
 Globally, 30-40% of food produced is lost between harvest and consumption,
@@ -9,37 +10,35 @@ directly contributes to food insecurity affecting 282 million people in the regi
 Small-scale farmers lack access to predictive analytics, optimal storage conditions
 monitoring, and efficient market connections, resulting in preventable food waste while
 communities face hunger.
-Proposed Solution
+
+Proposed Solution:
+
 Our Predictive Food Security Platform will:
 Use real-time weather, soil, and satellite data. Apply AI models to predict crop yield and
 detect risks (drought, pests, floods). Provide dashboards for farmers, suppliers, and
 governments to make better decisions. Connect surplus food producers with shortage
 areas to reduce waste.
 And Integrate Post-Harvest Management Platform:
-•
-•
-•
-•
-•
-•
-IoT Sensor Network: Deploy low-cost sensors monitoring temperature,
+
+• IoT Sensor Network: Deploy low-cost sensors monitoring temperature,
 humidity, CO2 levels in storage facilities
-AI Predictive Analytics: IBM Z-powered machine learning predicting optimal
+• AI Predictive Analytics: IBM Z-powered machine learning predicting optimal
 harvest timing and storage duration
-Blockchain Supply Chain: Immutable tracking from farm to market ensuring
+• Blockchain Supply Chain: Immutable tracking from farm to market ensuring
 food safety and reducing fraud
-Dynamic Market Matching: Real-time connection between farmers and
+• Dynamic Market Matching: Real-time connection between farmers and
 buyers based on quality predictions
-Mobile Advisory System: SMS/app-based alerts for farmers on storage
+• Mobile Advisory System: SMS/app-based alerts for farmers on storage
 conditions and market opportunities
-Technical Architecture
-oooIBM Z Mainframe: Core processing for complex agricultural algorithms
+
+Technical Architecture:
+• IBM Z Mainframe: Core processing for complex agricultural algorithms
 and transaction processing
-Hybrid Cloud: Edge computing for real-time IoT data processing with
+• Hybrid Cloud: Edge computing for real-time IoT data processing with
 mainframe analytics
-AI/ML Models: Crop quality prediction, spoilage prevention, demand
+• AI/ML Models: Crop quality prediction, spoilage prevention, demand
 forecasting
-o Mobile Interface: Progressive web app for low-bandwidth environments
+• Mobile Interface: Progressive web app for low-bandwidth environments
 Impact
 With this platform, farmers can plan better, governments can respond faster, and
 communities can avoid shortages. This solution reduces hunger, cuts food waste, and

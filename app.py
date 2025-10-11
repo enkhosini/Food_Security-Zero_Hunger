@@ -1,5 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for
-import sqlite3
+import sqlite3 as sql
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split, GridSearchCV
+
+
+
+dataframe = pd.read_csv()
 
 app = Flask(__name__)
 
