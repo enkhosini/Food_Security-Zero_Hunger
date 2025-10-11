@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code Crusaders - Predictive Food Security Platform</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo">CC</div>
+      <div class="brand-text">
+        <h1>Code Crusaders - TUT022</h1>
+        <p>Predictive Food Security Platform | SDG 2: Zero Hunger</p>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#problem">Problem</a>
+      <a href="#solution">Solution</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#uniqueness">Uniqueness</a>
+      <a href="#business">Business</a>
+      <a href="#security">Security</a>
+      <a href="#competitors">Competitors</a>
+      <a href="#audiences">Audiences</a>
+      <a href="#impact">Impact</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Zero Hunger through AI, IoT, and IBM Z-powered analytics</h2>
+      <p>
+        Hunger stems from poor predictions, post-harvest loss, and inefficient distribution. We reduce waste, boost resilience, and connect surplus to need.
+      </p>
+      <div class="hero-actions">
+        <button class="primary" data-scroll="#dashboard">View demo dashboard</button>
+        <button class="secondary" data-scroll="#solution">Explore solution</button>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-value">30–40%</span>
+        <span class="stat-label">Food lost between harvest and consumption</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">37%</span>
+        <span class="stat-label">Post-harvest losses for fruits/vegetables (SSA)</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">$4B</span>
+        <span class="stat-label">Annual economic losses in SSA</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">282M</span>
+        <span class="stat-label">People affected by food insecurity</span>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="problem" class="section">
+      <h3>Problem statement: Food security and zero hunger</h3>
+      <div class="grid two">
+        <div>
+          <p>
+            Hunger is not just about scarcity. It’s driven by poor crop predictions, food waste, and inefficient distribution. Globally, 30–40% of food is lost between harvest and consumption—1.3 billion tons annually.
+          </p>
+          <p>
+            In Sub-Saharan Africa, post-harvest losses reach 37% for fruits and vegetables due to inadequate storage, poor transportation, and lack of real-time quality monitoring—representing $4 billion in losses and affecting 282 million people.
+          </p>
+        </div>
+        <div class="card">
+          <h4>Core gaps for small-scale farmers</h4>
+          <ul class="bullets">
+            <li><strong>Predictive analytics:</strong> Limited access to yield and risk predictions</li>
+            <li><strong>Quality monitoring:</strong> No continuous tracking of storage conditions</li>
+            <li><strong>Market access:</strong> Weak connections to buyers in shortage areas</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="solution" class="section">
+      <h3>Proposed solution overview</h3>
+      <div class="tabs" data-tabs>
+        <div class="tab-list" role="tablist">
+          <button role="tab" class="active">Predictive platform</button>
+          <button role="tab">Post-harvest management</button>
+          <button role="tab">Market matching</button>
+          <button role="tab">Mobile advisory</button>
+        </div>
+        <div class="tab-panels">
+          <div class="tab-panel active">
+            <p>
+              Use real-time weather, soil, and satellite data. Apply AI to predict crop yield and detect risks (drought, pests, floods). Provide role-based dashboards for farmers, suppliers, and governments. Connect surplus producers with shortage areas to reduce waste.
+            </p>
+          </div>
+          <div class="tab-panel">
+            <ul class="bullets">
+              <li><strong>IoT sensors:</strong> Temperature, humidity, CO₂ monitoring</li>
+              <li><strong>AI analytics:</strong> IBM Z-powered models for harvest timing and storage duration</li>
+              <li><strong>Blockchain:</strong> Immutable farm-to-market tracking for safety and fraud reduction</li>
+              <li><strong>Dynamic matching:</strong> Real-time farmer–buyer connections based on quality predictions</li>
+            </ul>
+          </div>
+          <div class="tab-panel">
+            <p>
+              Dynamic Market Matching identifies buyers for surplus lots using quality predictions, distance, and price tolerance—reducing waste while optimizing logistics.
+            </p>
+            <div class="match-sim">
+              <div class="controls">
+                <label>
+                  Surplus lot quality:
+                  <input type="range" min="50" max="100" value="78" id="qualityRange" />
+                </label>
+                <label>
+                  Max distance (km):
+                  <input type="number" value="200" id="distanceInput" />
+                </label>
+                <button id="simulateMatch" class="primary small">Find matches</button>
+              </div>
+              <div id="matchOutput" class="match-output card"></div>
+            </div>
+          </div>
+          <div class="tab-panel">
+            <p>
+              SMS/app alerts deliver storage condition warnings, market opportunities, and weather-based recommendations via a low-bandwidth progressive web app for remote areas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="architecture" class="section">
+      <h3>Technical architecture with IBM Z and hybrid cloud</h3>
+      <div class="grid three">
+        <div class="card">
+          <h4>Core processing</h4>
+          <ul class="bullets">
+            <li><strong>IBM Z mainframe:</strong> Complex agricultural algorithms and transactions</li>
+            <li><strong>Hybrid cloud:</strong> Edge computing for real-time IoT ingestion</li>
+            <li><strong>AI/ML models:</strong> Quality prediction, spoilage prevention, demand forecasting</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Data and interfaces</h4>
+          <ul class="bullets">
+            <li><strong>Satellite imagery:</strong> ESA/NASA sources</li>
+            <li><strong>Weather APIs:</strong> Local station and regional feeds</li>
+            <li><strong>Mobile interface:</strong> PWA for low-bandwidth environments</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Pipeline overview</h4>
+          <ol class="numbered">
+            <li><strong>Ingest:</strong> IoT + satellite + weather + market data</li>
+            <li><strong>Process:</strong> Edge normalization, mainframe analytics</li>
+            <li><strong>Decide:</strong> Risk alerts, yield forecasts, market matches</li>
+            <li><strong>Act:</strong> SMS/app advisory, logistics coordination</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="dashboard" class="section">
+      <h3>Interactive role-based dashboard demo</h3>
+      <div class="dashboard">
+        <aside class="dash-sidebar">
+          <h4>Role selection</h4>
+          <select id="roleSelect">
+            <option value="farmer">Farmer</option>
+            <option value="cooperative">Cooperative</option>
+            <option value="government">Government</option>
+            <option value="distributor">Distributor</option>
+          </select>
+
+          <h4>Filters</h4>
+          <label>
+            Region
+            <select id="regionSelect">
+              <option value="kenya">Kenya</option>
+              <option value="nigeria">Nigeria</option>
+              <option value="ssa">Sub-Saharan Africa</option>
+              <option value="custom">Custom</option>
+            </select>
+          </label>
+          <label>
+            Crop
+            <select id="cropSelect">
+              <option value="maize">Maize</option>
+              <option value="cassava">Cassava</option>
+              <option value="tomato">Tomato</option>
+              <option value="beans">Beans</option>
+            </select>
+          </label>
+          <button id="applyFilters" class="primary small">Apply</button>
+        </aside>
+
+        <div class="dash-main">
+          <div class="cards">
+            <div class="card kpi">
+              <h5>Predicted yield</h5>
+              <div class="kpi-value" id="kpiYield">—</div>
+            </div>
+            <div class="card kpi">
+              <h5>Spoilage risk (7–14 days)</h5>
+              <div class="kpi-value" id="kpiSpoilage">—</div>
+            </div>
+            <div class="card kpi">
+              <h5>Market price trend</h5>
+              <div class="kpi-value" id="kpiPrice">—</div>
+            </div>
+          </div>
+
+          <div class="charts">
+            <div class="card">
+              <h5>Storage conditions monitor</h5>
+              <canvas id="storageChart" width="600" height="200" aria-label="Storage conditions chart"></canvas>
+            </div>
+            <div class="card">
+              <h5>Risk map (simulated)</h5>
+              <div id="riskMap" class="risk-map" role="img" aria-label="Risk heatmap"></div>
+            </div>
+          </div>
+
+          <div class="card table-card">
+            <h5>Blockchain supply chain ledger (sample)</h5>
+            <table>
+              <thead>
+                <tr>
+                  <th>Txn ID</th>
+                  <th>Event</th>
+                  <th>Actor</th>
+                  <th>Timestamp</th>
+                  <th>Integrity</th>
+                </tr>
+              </thead>
+              <tbody id="ledgerBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="uniqueness" class="section">
+      <h3>How we are unique</h3>
+      <div class="grid two">
+        <div class="card">
+          <h4>Focus on underexplored sub-problems</h4>
+          <ul class="bullets">
+            <li><strong>Post-harvest loss prevention:</strong> Addressing the 30–40% gap</li>
+            <li><strong>Nutritional quality optimization:</strong> Beyond quantity</li>
+            <li><strong>Climate-resilient planning:</strong> Predictive analytics for crops</li>
+            <li><strong>Food fraud detection:</strong> Transparent supply chains</li>
+            <li><strong>Urban vertical farming:</strong> Optimization tooling</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Leverage IBM Z’s strengths</h4>
+          <ul class="bullets">
+            <li><strong>Massive transactions:</strong> Real-time supply tracking</li>
+            <li><strong>Security features:</strong> Blockchain-backed authenticity</li>
+            <li><strong>Hybrid cloud:</strong> IoT to mainframe analytics</li>
+            <li><strong>AI/ML at scale:</strong> Complex agricultural models</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid two">
+        <div class="card">
+          <h4>Market differentiation</h4>
+          <ul class="bullets">
+            <li><strong>Post-harvest focus:</strong> Real-time monitoring and action</li>
+            <li><strong>Affordability:</strong> Low-cost sensors for smallholders</li>
+            <li><strong>Offline capability:</strong> Critical functions without internet</li>
+            <li><strong>Cultural adaptation:</strong> Local languages and knowledge</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Technology differentiation</h4>
+          <ul class="bullets">
+            <li><strong>IBM Z integration:</strong> Mainframe-scale modeling</li>
+            <li><strong>Hybrid architecture:</strong> Edge + centralized analytics</li>
+            <li><strong>Predictive quality:</strong> Spoilage forecast (7–14 days)</li>
+            <li><strong>Integrated value chain:</strong> Storage, quality, market access</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="business" class="section">
+      <h3>Commercialization and go-to-market</h3>
+      <div class="grid two">
+        <div class="card">
+          <h4>Revenue model</h4>
+          <ul class="bullets">
+            <li><strong>SaaS subscription:</strong> $15–50/month per farmer</li>
+            <li><strong>Transaction fees:</strong> 2–3% commission</li>
+            <li><strong>Equipment leasing:</strong> IoT sensor packages</li>
+            <li><strong>Data insights:</strong> Anonymized analytics for research</li>
+            <li><strong>Insurance partnerships:</strong> Risk data for coverage</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Go-to-market strategy</h4>
+          <ol class="numbered">
+            <li><strong>Phase 1:</strong> Pilot with 100 farmers in Kenya/Nigeria</li>
+            <li><strong>Phase 2:</strong> Partner with cooperatives</li>
+            <li><strong>Phase 3:</strong> Government contracts</li>
+            <li><strong>Phase 4:</strong> Expand to 10 countries by year 3</li>
+          </ol>
+          <h4>Financial projections</h4>
+          <ul class="bullets">
+            <li><strong>Year 1:</strong> $500K revenue, 5,000 farmers</li>
+            <li><strong>Year 3:</strong> $15M revenue, 150,000 farmers</li>
+            <li><strong>Year 5:</strong> $75M revenue, 500,000 farmers across 15 countries</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="security" class="section">
+      <h3>Security architecture (CIA: confidentiality, integrity, availability)</h3>
+      <div class="grid three">
+        <div class="card">
+          <h4>Confidentiality</h4>
+          <ul class="bullets">
+            <li><strong>Data encryption:</strong> End-to-end for farmer and transaction data</li>
+            <li><strong>Access controls:</strong> Role-based permissions</li>
+            <li><strong>Privacy compliance:</strong> GDPR alignment</li>
+            <li><strong>Anonymization:</strong> Personal data separated from analytics</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Integrity</h4>
+          <ul class="bullets">
+            <li><strong>Blockchain ledger:</strong> Immutable supply chain transactions</li>
+            <li><strong>Sensor authentication:</strong> Cryptographic validation</li>
+            <li><strong>Data validation:</strong> ML anomaly detection</li>
+            <li><strong>Audit trails:</strong> Full logging</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Availability</h4>
+          <ul class="bullets">
+            <li><strong>IBM Z reliability:</strong> 99.999% uptime</li>
+            <li><strong>Redundant systems:</strong> Multi-DC failover</li>
+            <li><strong>Offline mode:</strong> Critical functions without connectivity</li>
+            <li><strong>Disaster recovery:</strong> Backups with 4-hour RTO</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <h4>Additional security measures</h4>
+        <ul class="bullets">
+          <li><strong>MFA:</strong> Multi-factor authentication for admin access</li>
+          <li><strong>Pen tests:</strong> Regular security audits</li>
+          <li><strong>Secure APIs:</strong> Rate limiting and input validation</li>
+          <li><strong>Compliance:</strong> ISO 27001, SOC 2 Type II planned</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="competitors" class="section">
+      <h3>Competitive landscape</h3>
+      <div class="grid two">
+        <div class="card">
+          <h4>Direct competitors</h4>
+          <ul class="bullets">
+            <li><strong>Farmcrowdy (Nigeria):</strong> Digital agriculture—lacks post-harvest focus</li>
+            <li><strong>Apollo Agriculture (Kenya):</strong> Credit and inputs—limited storage solutions</li>
+            <li><strong>ThriveAgric (Nigeria):</strong> Farm management—no real-time monitoring</li>
+          </ul>
+          <h4>Indirect competitors</h4>
+          <ul class="bullets">
+            <li><strong>Cold chain companies:</strong> Expensive infrastructure</li>
+            <li><strong>Extension services:</strong> Government-run advisory</li>
+            <li><strong>Manual storage:</strong> Traditional granaries and warehouses</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Competitive gaps addressed</h4>
+          <ul class="bullets">
+            <li><strong>Post-harvest:</strong> Few address losses at scale</li>
+            <li><strong>Real-time monitoring:</strong> Continuous sensor-driven tracking</li>
+            <li><strong>Integration:</strong> Storage + prediction + market access</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="audiences" class="section">
+      <h3>Target audiences and end beneficiaries</h3>
+      <div class="grid three">
+        <div class="card">
+          <h4>Primary</h4>
+          <ul class="bullets">
+            <li><strong>Smallholder farmers:</strong> 1–10 hectares in developing countries</li>
+            <li><strong>Cooperatives:</strong> Groups representing 100–1000 farmers</li>
+            <li><strong>Local distributors:</strong> Seeking consistent supply</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Secondary</h4>
+          <ul class="bullets">
+            <li><strong>Government departments:</strong> Food security programs</li>
+            <li><strong>NGOs:</strong> Agricultural development</li>
+            <li><strong>Impact investors:</strong> SDG-aligned opportunities</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>End beneficiaries</h4>
+          <ul class="bullets">
+            <li><strong>Rural communities:</strong> Reduced waste, increased income</li>
+            <li><strong>Urban consumers:</strong> Lower prices, better availability</li>
+            <li><strong>National economies:</strong> Reduced import dependency</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="impact" class="section">
+      <h3>Impact and SDG alignment</h3>
+      <p>
+        Farmers plan better, governments respond faster, and communities avoid shortages. The platform reduces hunger, cuts food waste, and strengthens resilience against climate change—advancing SDG 2: Zero Hunger.
+      </p>
+    </section>
+
+    <section id="contact" class="section">
+      <h3>Contact and pilot enrollment</h3>
+      <div class="grid two">
+        <form id="contactForm" class="card">
+          <h4>Get in touch</h4>
+          <label>
+            Name
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            Organization
+            <input type="text" name="org" />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="4" required></textarea>
+          </label>
+          <button class="primary" type="submit">Submit</button>
+          <p id="formStatus" class="form-status" aria-live="polite"></p>
+        </form>
+
+        <div class="card">
+          <h4>Pilot targets</h4>
+          <ul class="bullets">
+            <li><strong>Phase 1:</strong> 100 farmers (Kenya/Nigeria)</li>
+            <li><strong>Cooperative partners:</strong> Regional groups</li>
+            <li><strong>Government programs:</strong> National food security</li>
+            <li><strong>Expansion:</strong> 10 countries by year 3</li>
+          </ul>
+          <div class="cta">
+            <button class="secondary" data-scroll="#business">View go-to-market</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>© 2025 Code Crusaders - TUT022</div>
+    <div>Powered by IBM Z, Hybrid Cloud, AI/ML, IoT, Blockchain</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
