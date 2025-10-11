@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="static/css/styles.css" />
+</head>
+<body>
+    <section id="dashboard" class="section">
+        <h3>Interactive role-based dashboard demo</h3>
+        <div class="dashboard">
+            <aside class="dash-sidebar">
+                <h4>Role selection</h4>
+                <select id="roleSelect">
+                    <option value="farmer">Farmer</option>
+                    <option value="cooperative">Cooperative</option>
+                    <option value="government">Government</option>
+                    <option value="distributor">Distributor</option>
+                </select>
+
+                <h4>Filters</h4>
+                <label>Region
+                    <select id="regionSelect">
+                    <option value="kenya">Kenya</option>
+                    <option value="nigeria">Nigeria</option>
+                    <option value="ssa">Sub-Saharan Africa</option>
+                    <option value="custom">Custom</option>
+                    </select>
+                </label>
+                <label>Crop
+                    <select id="cropSelect">
+                    <option value="maize">Maize</option>
+                    <option value="cassava">Cassava</option>
+                    <option value="tomato">Tomato</option>
+                    <option value="beans">Beans</option>
+                </select>
+          </label> <button id="applyFilters" class="primary small">Apply</button>
+        </aside>
+
+        <div class="dash-main">
+            <div class="cards">
+                <div class="card kpi">
+                    <h5>Predicted yield</h5>
+                <div class="kpi-value" id="kpiYield">—</div>
+            </div>
+            <div class="card kpi">
+                <h5>Spoilage risk (7–14 days)</h5>
+                <div class="kpi-value" id="kpiSpoilage">—</div>
+            </div>
+            <div class="card kpi">
+                <h5>Market price trend</h5>
+                <div class="kpi-value" id="kpiPrice">—</div>
+            </div>
+        </div>
+
+        <div class="charts">
+            <div class="card">
+                <h5>Storage conditions monitor</h5>
+                <canvas id="storageChart" width="600" height="200" aria-label="Storage conditions chart"></canvas>
+            </div>
+        <div class="card">
+            <h5>Risk map (simulated)</h5>
+            <div id="riskMap" class="risk-map" role="img" aria-label="Risk heatmap"></div>
+        </div>
+    </div>
+
+    <div class="card table-card">
+        <h5>Blockchain supply chain ledger (sample)</h5>
+        <table>
+            <thead>
+                <tr>
+                    <th>Txn ID</th>
+                    <th>Event</th>
+                    <th>Actor</th>
+                    <th>Timestamp</th>
+                    <th>Integrity</th>
+                </tr>
+            </thead>
+            <tbody id="ledgerBody"></tbody>
+        </table>
+    </div>
+</div>
+</div>
+    </section>
+<script src="static/js/app.js"></script>
+</body>
+</html>
