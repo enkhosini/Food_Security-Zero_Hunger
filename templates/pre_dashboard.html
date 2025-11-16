@@ -1,28 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pre_dashboard</title>
-    <link rel="stylesheet" href="static/css/styles.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pre-Harvest Dashboard - Code Crusaders</title>
+  <link rel="stylesheet" href="static/css/styles.css" />
 </head>
 <body>
-    <header class="site-header">
-        <div class="brand">
-            <div class="logo">CC</div>
-                <div class="brand-text">
-                    <h1>Code Crusaders - TUT022</h1>
-                    <p>Predictive Food Security Platform | SDG 2: Zero Hunger</p>
-                </div>
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo">CC</div>
+      <div class="brand-text">
+        <h1>Code Crusaders - TUT022</h1>
+        <p>Predictive Food Security Platform | SDG 2: Zero Hunger</p>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="{{url_for('home')}}">Home</a>
+      <a href="{{url_for('pre_dashboard')}}" style="background: var(--card);">Pre-Harvest Dashboard</a>
+      <a href="{{url_for('post_dashboard')}}">Post-Harvest Dashboard</a>
+      <a href="{{url_for('farmers_market')}}">Farmers Market</a>
+      <a href="{{url_for('insurance_page')}}">Farmers Micro-Insurance</a>
+      <a href="{{url_for('vision')}}">Vision</a>
+      <a href="{{url_for('account')}}">Account</a>
+    </nav>
+  </header>
+
+ <div class="dashboard-card">
+        <div class="card-header">
+          <div class="card-icon post-harvest-icon">📦</div>
+          <h3 class="card-title">Post-Harvest Monitoring</h3>
         </div>
-        <nav class="nav">
-            <a href="{{url_for('pre_dashboard')}}">Pre-Harvest Dashboard</a>
-            <a href="{{url_for('post_dashboard')}}">Post-Harvest Dashboard</a>
-            <a href="{{url_for('farmers_market')}}">Farmers Market</a>
-            <a href="{{url_for('insurance_page')}}">Farmers Micro-Insurance</a>
-            <a href="{{url_for('vision')}}">Vision</a>
-            <a href="{{url_for('account')}}">Account</a>
-        </nav>
-    </header>
+        <div class="card-content">
+          <div class="metric-row">
+            <span class="metric-label">Storage Efficiency</span>
+            <span class="metric-value positive">72% <span class="trend-indicator">↑ 5%</span></span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 72%; background: linear-gradient(90deg, #ed8936 0%, #dd6b20 100%);"></div>
+          </div>
+
+          <div class="metric-row">
+            <span class="metric-label">Wasteage</span>
+            <span class="metric-value positive">-12% <span class="trend-indicator">↓</span></span>
+          </div>
+
+          <div class="metric-row">
+            <span class="metric-label">Active Storage Units</span>
+            <span class="metric-value neutral">156</span>
+          </div>
+
+          <div class="metric-row">
+            <span class="metric-label">Quality Alerts</span>
+            <span class="metric-value negative">23 <span class="trend-indicator">⚠️</span></span>
+          </div>
+
+          <div class="alert-box info">
+            <strong>ℹ️ Insight:</strong> AI detected places to optimize storage methods: CO2 gases and accumulation of heat.
+          </div>
+        </div>
+      </div>
+
+
+  <footer class="site-footer">
+    <div>© 2025 Code Crusaders - TUT022</div>
+    <div>Powered by IBM Z, Hybrid Cloud, AI/ML, IoT, Blockchain</div>
+  </footer>
+
+  <script src="static/js/app.js"></script>
 </body>
 </html>

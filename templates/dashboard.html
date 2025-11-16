@@ -7,6 +7,26 @@
     <link rel="stylesheet" href="static/css/styles.css" />
 </head>
 <body>
+
+  <header class="site-header">
+        <div class="brand">
+            <div class="logo">CC</div>
+            <div class="brand-text">
+                <h1>Code Crusaders - TUT022</h1>
+                <p>Predictive Food Security Platform | SDG 2: Zero Hunger</p>
+            </div>
+        </div>
+        <nav class="nav">
+        <a href="{{url_for('home')}}">Home</a>
+        <a href="{{url_for('pre_dashboard')}}" style="background: var(--card);">Pre-Harvest Dashboard</a>
+        <a href="{{url_for('post_dashboard')}}">Post-Harvest Dashboard</a>
+        <a href="{{url_for('farmers_market')}}">Farmers Market</a>
+        <a href="{{url_for('insurance_page')}}">Farmers Micro-Insurance</a>
+        <a href="{{url_for('vision')}}">Vision</a>
+        <a href="{{url_for('account')}}">Account</a>
+    </nav>
+  </header>
+
     <section id="dashboard" class="section">
         <h3>Interactive role-based dashboard demo</h3>
         <div class="dashboard">
